@@ -134,7 +134,7 @@ public class TP_Algo {
             affectation++;
         }
         comparison++; //exitLoop == tab.length - 1
-        affectation++; //permutation = false;
+        affectation++; //exchange = false;
         nbOperation = affectation + comparison + (permutation*3);
         return tab;
     }
