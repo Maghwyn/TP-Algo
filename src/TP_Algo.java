@@ -52,9 +52,9 @@ public class TP_Algo {
 
     public static int[] sortSelection(int[] tab) {
         affectation++;
-        for(int index = 0; index <= tab.length - 1; index++) {
+        for(int index = 0; index < tab.length; index++) {
             affectation++; nbLoop++;
-            for(int verify = index + 1; verify <= tab.length - 1; verify++) {
+            for(int verify = index + 1; verify < tab.length; verify++) {
                 affectation = affectation + 2; nbLoop++;
                 if(tab[verify] < tab[index]) {
                     int valueIndex = tab[index];
@@ -70,7 +70,7 @@ public class TP_Algo {
 
     public static int[] sortInsertion(int[] tab) {
         affectation++;
-        for(int index = 1; index <= tab.length - 1; index++) {
+        for(int index = 1; index < tab.length; index++) {
             int range = tab[index];
             int verify;
             affectation = affectation + 2; nbLoop++;
@@ -89,7 +89,7 @@ public class TP_Algo {
         affectation = affectation + 2;
         for(int index = 0; index < tab.length; index++) {
             affectation++; nbLoop++;
-            for (int verify = 0; verify <= tab.length - 2; verify++) {
+            for (int verify = 0; verify < tab.length - 1; verify++) {
                 affectation++; nbLoop++;
                 if (tab[verify + 1] < tab[verify]) {
                     int valueIndex = tab[verify];
@@ -109,7 +109,7 @@ public class TP_Algo {
         affectation = affectation + 3;
         while(exchange) {
             nbLoop++;
-            for (int index = 0; index <= tab.length - 2; index++) {
+            for (int index = 0; index < tab.length - 1; index++) {
                 if(tab[index + 1] < tab[index]) {
                     int valueIndex = tab[index];
                     tab[index] = tab[index + 1];
@@ -118,7 +118,7 @@ public class TP_Algo {
                 }
                 nbLoop++;
 
-                if(index <= tab.length - 3 && tab[index] <= tab[index +1] && tab[index + 1] <= tab[index + 2]) {
+                if(index < tab.length - 2 && tab[index] <= tab[index +1] && tab[index + 1] <= tab[index + 2]) {
                     exitLoop++;
                     comparison = comparison + 3; affectation++;
                 } else if(index == tab.length - 2 && tab[index] <= tab[index +1]) {
@@ -126,7 +126,7 @@ public class TP_Algo {
                     comparison = comparison + 2; affectation++;
                 }
 
-                if(exitLoop == tab.length - 2) {
+                if(exitLoop == tab.length - 1) {
                     exchange = false; break;
                 }
             }
@@ -193,7 +193,7 @@ public class TP_Algo {
         // sortMethod 2 = sortInsertion.
         // sortMethod 3 = sortNormalBubble.
         // sortMethod 4 = sortOptiBubble.
-        //bestWorst(1);
-        stat(10,20,5,10,1);
+        bestWorst(4);
+        //stat(10,20,5,10,4);
     }
 }
